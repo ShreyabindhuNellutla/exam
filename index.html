@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login Signup</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+}
+
+.container {
+  width: 800px;
+  height: 500px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.left, .right {
+  width: 50%;
+  padding: 40px;
+  transition: 0.5s;
+}
+
+.left {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left h2 {
+  margin-bottom: 20px;
+}
+
+.left button {
+  padding: 10px 20px;
+  border: none;
+  background: white;
+  color: #4facfe;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form h2 {
+  margin-bottom: 20px;
+}
+
+.form input {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background: #4facfe;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.social {
+  margin-top: 10px;
+}
+
+.social button {
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.google { background: #db4437; color: white; }
+.facebook { background: #3b5998; color: white; }
+
+.container.active .right {
+  transform: translateX(-100%);
+}
+
+.container.active .left {
+  transform: translateX(100%);
+}
+</style>
+</head>
+<body>
+
+<div class="container" id="container">
+
+  <!-- Signup Panel -->
+  <div class="left">
+    <h2>New here?</h2>
+    <p>Create an account</p>
+    <button onclick="toggle()">Sign Up</button>
+  </div>
+
+  <!-- Login Form -->
+  <div class="right form">
+    <h2>Login</h2>
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button>Login</button>
+
+    <div class="social">
+      <button class="google">Login with Google</button>
+      <button class="facebook">Login with Facebook</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function toggle() {
+  document.getElementById("container").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
